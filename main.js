@@ -34,5 +34,24 @@ idea of a thread pool, with relation to running multiple processes at the same t
 
 
 function queueTime(customers, n) {
-  //TODO
+  // Input: customer time and tills (time & threads)
+  // Output: max time on till
+
+  // The n elements of the customers array will be splitet to n tills
+  // The following elements will be pushed to the till with the sum of the minimum customer-time: Math.min()
+
+  // The function consists of 4 steps:
+  // 1. step: Create the n arrays
+  const array = [];
+  for (let i = 0; i < n; i++) {
+  	array.push([]);
+  }
+
+  // 2. step: Compare the sum of each array and find the minimum
+  const arrSum = arr => arr.reduce((a, b) => a+b, 0)
+  const arrSums = array.map(x => arrSum(x));
+  const arrMin = Math.min(...arrSum);
+
+  // 3. step: Push the numbers into the array with the lowest time
+  // 4. step: Compare the maximum time per array and returns the the sum of the array with the highest time
 }
